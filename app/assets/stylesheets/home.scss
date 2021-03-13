@@ -1,0 +1,27 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+styles for the header of home page
+adding image as background for the header div from the images directory in assets file app directory
+ */
+.homepage-header-container{
+  margin: auto;
+  width: 50%;
+  border: 2px solid;
+  height: 175px;
+  background-image: url("complaint-background-image.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+}
+
+/*
+styles for the body of home page 
+ */
+.home-page-body-container{
+  text-align: center;
+}
+
+
