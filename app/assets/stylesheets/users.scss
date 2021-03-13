@@ -1,0 +1,51 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+  text-align: center;
+  font-family: Marker Felt, fantasy;
+  font-style: italic
+}
+
+.signup-header{
+  margin: auto;
+  background-color:red;
+}
+
+.flex-container {
+  display: flex;
+  margin-top: 5%;
+}
+
+.flex-child {
+  flex: 1;
+  border: 3px solid black;
+}
+
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
+
+.user-registration-form input{
+  width: 50%;
+  padding: 2%;
+  border: 2px solid #730E15;
+  font-size: 16px;
+  border-radius: 25px;
+  display: block;
+  margin: 1% auto;
+}
+
+.user-registration-form input[type="submit"] {
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: #861c1e;
+  color: white;
+  border-radius: 25px;
+  width: 25%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
