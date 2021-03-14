@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :complains
   # Root home page for the website
   root 'home#index'
 
