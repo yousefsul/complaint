@@ -2,32 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1{
-  text-align: center;
-  font-family: Marker Felt, fantasy;
-  font-style: italic
-}
+
 
 .signup-header{
   margin: auto;
-  background-color:red;
 }
-
+/*
+container for registration make side by side
+for user and admin registration
+*/
 .flex-container {
   display: flex;
   margin-top: 5%;
 }
-
 .flex-child {
   flex: 1;
   border: 3px solid black;
 }
-
 .flex-child:first-child {
   margin-right: 20px;
 }
 
-
+/*
+registration input form for password and email
+and button submit styling
+*/
 .user-registration-form input{
   width: 50%;
   padding: 2%;
@@ -37,7 +36,6 @@ h1{
   display: block;
   margin: 1% auto;
 }
-
 .user-registration-form input[type="submit"] {
   padding: 10px;
   border: 1px solid transparent;
@@ -48,4 +46,44 @@ h1{
   display: block;
   margin-right: auto;
   margin-left: auto;
+}
+
+/*
+container for login form add sub-container to have the form and the outer div
+to have background image
+*/
+.login-form-container{
+  margin: auto;
+  width: 20%;
+  padding: 10%;
+  background-color: #bc3131;
+  text-align: center;
+  background-image: url("background-login-form.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+.login-form-container input{
+  width: 100%;
+  padding: 5%;
+  border: 2px solid #730E15;
+  font-size: 16px;
+  border-radius: 25px;
+  display: block;
+}
+.login-form-container input[type="submit"] {
+  padding: 10px;
+  border: 1px solid transparent;
+  background-color: #730E15;
+  color: white;
+  border-radius: 25px;
+  width: 50%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.login-form{
+  background-color: white;
+  padding: 10%;
+
 }

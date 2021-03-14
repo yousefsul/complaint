@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Complaint</title>
     <%= csrf_meta_tags %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+  <!--
+    Rendering application navigation bar for each page in the website
+  -->
+  <%= render 'layouts/app-navbar'%>
+  <%= yield %>
   </body>
 </html>

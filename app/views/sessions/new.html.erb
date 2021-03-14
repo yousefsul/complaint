@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+  <title>LoginPage</title>
+</head>
+
+
+<h1>Login</h1>
+
+<div class="login-form-container">
+
+  <div class="login-form">
+
+
+    <%= form_for '/login', html: { class: "user-login-form" } do |f| %>
+      <%= f.text_field :email, placeholder: "Email" %><br>
+      <%= f.password_field :password, placeholder: "Password" %><br>
+      <%= submit_tag "Login" %>
+    <% end %>
+  </div>
+</div>
+</html>
+

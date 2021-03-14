@@ -100,80 +100,156 @@
       <list>
         <option value="active_record:migration" />
         <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
+        <option value="assets" />
+        <option value="channel" />
+        <option value="coffee:assets" />
         <option value="controller" />
-        <option value="erb:controller" />
-        <option value="erb:mailer" />
-        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
+        <option value="jbuilder" />
+        <option value="job" />
+        <option value="js:assets" />
         <option value="mailer" />
-        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
+        <option value="mongoid:config" />
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
+        <option value="system_test" />
+        <option value="task" />
         <option value="test_unit:controller" />
+        <option value="test_unit:generator" />
         <option value="test_unit:helper" />
         <option value="test_unit:integration" />
+        <option value="test_unit:job" />
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
         <option value="test_unit:scaffold" />
+        <option value="test_unit:system" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
         <option value="active_record:migration" />
         <option value="active_record:model" />
-        <option value="active_record:observer" />
-        <option value="active_record:session_migration" />
+        <option value="assets" />
+        <option value="channel" />
+        <option value="coffee:assets" />
         <option value="controller" />
-        <option value="erb:controller" />
-        <option value="erb:mailer" />
-        <option value="erb:scaffold" />
         <option value="generator" />
         <option value="helper" />
         <option value="integration_test" />
+        <option value="jbuilder" />
+        <option value="job" />
+        <option value="js:assets" />
         <option value="mailer" />
-        <option value="metal" />
         <option value="migration" />
         <option value="model" />
-        <option value="model_subclass" />
-        <option value="observer" />
-        <option value="performance_test" />
-        <option value="plugin" />
+        <option value="mongoid:config" />
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
-        <option value="session_migration" />
-        <option value="stylesheets" />
+        <option value="system_test" />
+        <option value="task" />
         <option value="test_unit:controller" />
+        <option value="test_unit:generator" />
         <option value="test_unit:helper" />
         <option value="test_unit:integration" />
+        <option value="test_unit:job" />
         <option value="test_unit:mailer" />
         <option value="test_unit:model" />
-        <option value="test_unit:observer" />
-        <option value="test_unit:performance" />
         <option value="test_unit:plugin" />
         <option value="test_unit:scaffold" />
+        <option value="test_unit:system" />
       </list>
     </option>
   </component>
   <component name="RakeTasksCache">
     <option name="myRootTask">
-      <RakeTaskImpl id="rake" />
+      <RakeTaskImpl id="rake">
+        <subtasks>
+          <RakeTaskImpl description="List versions of all Rails frameworks and the environment" fullCommand="about" id="about" />
+          <RakeTaskImpl id="app">
+            <subtasks>
+              <RakeTaskImpl description="Applies the template supplied by LOCATION=(/path/to/template) or URL" fullCommand="app:template" id="template" />
+              <RakeTaskImpl description="Update configs and some other initially generated files (or use just update:configs or update:bin)" fullCommand="app:update" id="update" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="assets">
+            <subtasks>
+              <RakeTaskImpl description="Remove old compiled assets" fullCommand="assets:clean[keep]" id="clean[keep]" />
+              <RakeTaskImpl description="Remove compiled assets" fullCommand="assets:clobber" id="clobber" />
+              <RakeTaskImpl description="Load asset compile environment" fullCommand="assets:environment" id="environment" />
+              <RakeTaskImpl description="Compile all the assets named in config.assets.precompile" fullCommand="assets:precompile" id="precompile" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="cache_digests">
+            <subtasks>
+              <RakeTaskImpl description="Lookup first-level dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:dependencies" id="dependencies" />
+              <RakeTaskImpl description="Lookup nested dependencies for TEMPLATE (like messages/show or comments/_comment.html)" fullCommand="cache_digests:nested_dependencies" id="nested_dependencies" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="db">
+            <subtasks>
+              <RakeTaskImpl description="Drops all the collections for the database for the current Rails.env" fullCommand="db:drop" id="drop" />
+              <RakeTaskImpl id="mongoid">
+                <subtasks>
+                  <RakeTaskImpl description="Create the indexes defined on your mongoid models" fullCommand="db:mongoid:create_indexes" id="create_indexes" />
+                  <RakeTaskImpl description="Drops the default client database" fullCommand="db:mongoid:drop" id="drop" />
+                  <RakeTaskImpl description="Drop all collections except the system collections" fullCommand="db:mongoid:purge" id="purge" />
+                  <RakeTaskImpl description="Remove the indexes defined on your mongoid models without questions" fullCommand="db:mongoid:remove_indexes" id="remove_indexes" />
+                  <RakeTaskImpl description="Remove indexes that exist in the database but aren't specified on the models" fullCommand="db:mongoid:remove_undefined_indexes" id="remove_undefined_indexes" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl description="Drop all collections except the system collections" fullCommand="db:purge" id="purge" />
+              <RakeTaskImpl description="Delete data and loads the seeds" fullCommand="db:reset" id="reset" />
+              <RakeTaskImpl description="Load the seed data from db/seeds.rb" fullCommand="db:seed" id="seed" />
+              <RakeTaskImpl description="Create the database, and initialize with the seed data" fullCommand="db:setup" id="setup" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="dev">
+            <subtasks>
+              <RakeTaskImpl description="Toggle development mode caching on/off" fullCommand="dev:cache" id="cache" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl description="Print out all defined initializers in the order they are invoked by Rails" fullCommand="initializers" id="initializers" />
+          <RakeTaskImpl id="log">
+            <subtasks>
+              <RakeTaskImpl description="Truncates all/specified *.log files in log/ to zero bytes (specify which logs with LOGS=test,development)" fullCommand="log:clear" id="clear" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl description="Prints out your Rack middleware stack" fullCommand="middleware" id="middleware" />
+          <RakeTaskImpl description="Enumerate all annotations (use notes:optimize, :fixme, :todo for focus)" fullCommand="notes" id="notes" />
+          <RakeTaskImpl id="notes">
+            <subtasks>
+              <RakeTaskImpl description="Enumerate a custom annotation, specify with ANNOTATION=CUSTOM" fullCommand="notes:custom" id="custom" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl description="Restart app by touching tmp/restart.txt" fullCommand="restart" id="restart" />
+          <RakeTaskImpl description="Print out all defined routes in match order, with names" fullCommand="routes" id="routes" />
+          <RakeTaskImpl description="Generate a cryptographically secure secret key (this is typically used to generate a secret for cookie sessions)" fullCommand="secret" id="secret" />
+          <RakeTaskImpl description="Report code statistics (KLOCs, etc) from the application or engine" fullCommand="stats" id="stats" />
+          <RakeTaskImpl id="time">
+            <subtasks>
+              <RakeTaskImpl description="List all time zones, list by two-letter country code (`rails time:zones[US]`), or list by UTC offset (`rails time:zones[-8]`)" fullCommand="time:zones[country_or_offset]" id="zones[country_or_offset]" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="tmp">
+            <subtasks>
+              <RakeTaskImpl description="Clear cache and socket files from tmp/ (narrow w/ tmp:cache:clear, tmp:sockets:clear)" fullCommand="tmp:clear" id="clear" />
+              <RakeTaskImpl description="Creates tmp directories for cache, sockets, and pids" fullCommand="tmp:create" id="create" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="yarn">
+            <subtasks>
+              <RakeTaskImpl description="Install all JavaScript dependencies as specified via Yarn" fullCommand="yarn:install" id="install" />
+            </subtasks>
+          </RakeTaskImpl>
+        </subtasks>
+      </RakeTaskImpl>
     </option>
   </component>
 </module>

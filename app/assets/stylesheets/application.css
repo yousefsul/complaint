@@ -13,3 +13,68 @@
  *= require_tree .
  *= require_self
  */
+/*
+header one for app styling
+*/
+h1{
+    text-align: center;
+    margin-right: 7%;
+    font-family: Marker Felt, fantasy;
+    font-style: italic
+}
+
+/*
+navigating bar for app for links
+*/
+.app-navbar a{
+    float: left;
+    text-decoration: none ;
+    border: 1px dashed white;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 17px;
+}
+
+
+/*
+styling items in the navigating bar
+*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+li {
+    display: inline;
+    font-size: 20px;
+}
+
+/*
+styling links for signup and login to right of page
+*/
+.right-nav {
+    float: right;
+}
+.app-navbar {
+    overflow: hidden;
+    background-color: #861c1e;
+}
+
+/*
+styling link for navigating bar when mouse hove
+*/
+.app-navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*
+styling link for navigating bar when active
+*/
+.app-navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
