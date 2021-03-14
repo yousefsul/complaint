@@ -6,6 +6,7 @@ class User
     admin attribute default as false
     using the activemodel to secure the user password
     email and password can't be blank
+    each user can have multiple complains
 =end
   include Mongoid::Document
   include Mongoid::Attributes::Dynamic
@@ -16,5 +17,6 @@ class User
 
   validates :email, presence: true, uniqueness: true
   has_secure_password validations: false
+  has_many :complains
 
 end
