@@ -13,7 +13,7 @@ class User
   include ActiveModel::SecurePassword
   field :email, type: String
   field :password_digest, type: String
-
+  field :admin, type: Mongoid::Boolean, default: false
 
   validates :email, presence: true, uniqueness: true
   has_secure_password validations: false

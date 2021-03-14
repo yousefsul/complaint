@@ -9,7 +9,6 @@ store the current user to the value user_id in session
   def current_user
     return unless session[:user_id]
     @current_user ||= User.find(session[:user_id])
-
   end
 
 =begin

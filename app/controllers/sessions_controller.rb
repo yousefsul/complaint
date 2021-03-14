@@ -5,16 +5,15 @@ class SessionsController < ApplicationController
 search mongodb by email and password
 =end
   def create
-    @user = User.find_by(email: params[:email])
-
+    @user = User.find(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to '/'
     else
       redirect_to '/login'
     end
-  # rescue Mongoid::Errors::DocumentNotFound
-  #   # Ignored
+  rescue Mongoid::Errors::DocumentNotFound
+    # Ignored
   end
 
 

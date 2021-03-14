@@ -7,6 +7,8 @@ end
 
 # Object Document Mapper to connect my app with mongoDB
 gem 'mongoid', '~> 7.0.5'
+# authorization for users and admin
+gem 'cancancan', '~> 3.2', '>= 3.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
 # Use Puma as the app server

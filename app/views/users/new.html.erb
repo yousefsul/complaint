@@ -22,7 +22,16 @@
   </div>
 
   <div class="flex-child">
-    Flex Column 2
+    <h1>ADMIN</h1>
+    <div class="user-form">
+      <%= form_for @user , html: {class: "user-registration-form"} do |f| %>
+        <%= f.text_field :email, autocomplete: "email", placeholder: "Email"%><br>
+        <%= f.password_field :password, autocomplete: "password", placeholder: "Password" %><br>
+        <%= f.label :admin,:class => 'label-check-box' %>
+        <%= f.check_box :admin, id: :admin%>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 
 </div>

@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   # require for the user params and raise error for any missing
   # permit list of the parameters
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :password, :admin)
   end
 end
 
