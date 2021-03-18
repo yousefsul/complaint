@@ -9,10 +9,8 @@
 <div class="login-form-container">
 
   <div class="login-form">
-
-
-    <%= form_for '/login', html: { class: "user-login-form" } do |f| %>
-      <%= f.text_field :email, placeholder: "Email" %><br>
+    <%= form_for login_path, html: { class: "user-login-form" } do |f| %>
+      <%= f.email_field :email, placeholder: "Email" %><br>
       <%= f.password_field :password, placeholder: "Password" %><br>
       <%= submit_tag "Login" %>
     <% end %>

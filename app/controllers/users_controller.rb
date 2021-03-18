@@ -14,9 +14,13 @@ class UsersController < ApplicationController
   # save the user id in the session as id
   # create user and redirect to home page
   def create
-    @user = User.create!(user_params)
-    session[:user_id] = @user.id
-    redirect_to '/'
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 

@@ -5,19 +5,14 @@ class SessionsController < ApplicationController
 search mongodb by email and password
 =end
   def create
-    @user = User.find(params[:email])
-    if @user && @user.authenticate(params[:password])
+    @user = User.where(:email => params[:email])
+    if @user.present? && @user.authenticate(:password => params[:password])
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to complains_path
     else
-      redirect_to '/login'
+      render :new
     end
-  rescue Mongoid::Errors::DocumentNotFound
-    # Ignored
-  end
 
-
-  def login
   end
 
 =begin
@@ -25,7 +20,7 @@ delete the user_id from session when logout
 and redirect to login page
 =end
   def destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect_to '/login', notice: 'Logged out!'
   end
 end

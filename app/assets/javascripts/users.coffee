@@ -4,5 +4,3 @@
 
 
 
-
-Var input-check-box = document.getElementById("admin").checked = true;
