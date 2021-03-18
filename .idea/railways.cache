@@ -1,8 +1,16 @@
-  Prefix Verb URI Pattern          Controller#Action
-    root GET  /                    home#index
-   users POST /users(.:format)     users#create
-new_user GET  /users/new(.:format) users#new
-   login GET  /login(.:format)     sessions#new
-         POST /login(.:format)     sessions#create
- welcome GET  /welcome(.:format)   sessions#welcome
-  logout GET  /logout(.:format)    sessions#destroy
+       Prefix Verb   URI Pattern                   Controller#Action
+    complains GET    /complains(.:format)          complains#index
+              POST   /complains(.:format)          complains#create
+ new_complain GET    /complains/new(.:format)      complains#new
+edit_complain GET    /complains/:id/edit(.:format) complains#edit
+     complain GET    /complains/:id(.:format)      complains#show
+              PATCH  /complains/:id(.:format)      complains#update
+              PUT    /complains/:id(.:format)      complains#update
+              DELETE /complains/:id(.:format)      complains#destroy
+         root GET    /                             home#index
+        users POST   /users(.:format)              users#create
+     new_user GET    /users/new(.:format)          users#new
+        login GET    /login(.:format)              sessions#new
+              POST   /login(.:format)              sessions#create
+      welcome GET    /welcome(.:format)            sessions#welcome
+       logout GET    /logout(.:format)             sessions#destroy

@@ -14,8 +14,9 @@
   </thead>
 
   <tbody>
-    <% @complains.each do |complain| %>
-      <tr>
+  <% @complains.each do |complain| %>
+    <% if can? :manage, complain %>
+  <tr>
         <td><%= complain.title %></td>
         <td><%= complain.body %></td>
         <td><%= complain.status %></td>
@@ -24,6 +25,7 @@
         <td><%= link_to 'Edit', edit_complain_path(complain) %></td>
         <td><%= link_to 'Destroy', complain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+  <% end %>
     <% end %>
   </tbody>
 </table>
