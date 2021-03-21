@@ -1,10 +1,9 @@
-.loginContainer{
+.signUpContainer{
+  width: 50vw;
   margin: auto;
-  width : 50vw;
-
 }
 
-.loginForm{
+.signupForm{
   margin: auto;
   width: 25vw;
   background-color: #222831;
@@ -12,7 +11,7 @@
   padding: 5vw;
 }
 
-.loginForm input{
+.signupForm input{
   font-weight: bold;
   background-color: white;
   width: 25vw;
@@ -23,7 +22,7 @@
   font-size: 16px;
 }
 
-.loginForm input[type="submit"]{
+.signupForm input[type="submit"]{
   width: 10vw;
   text-align: center;
   background-color: #B00100;
@@ -34,3 +33,24 @@
   font-size: 14px;
   font-weight: bold;
 }
+
+.field label{
+  margin: auto;
+  display: inline-block;
+  width: 5vw;
+  color: white;
+  font-weight: bold;
+}
+
+#error_explanation{
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+}
+

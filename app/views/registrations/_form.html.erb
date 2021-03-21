@@ -1,0 +1,31 @@
+<div class="signUpContainer">
+
+  <%= form_with(model: @user, :local => true, :url => register_path, html: { class: "signupForm" }) do |form| %>
+
+    <%= render 'shared/error_messages' %>
+
+    <div class="field">
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :admin %><br/>
+      <%= form.check_box :admin %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit "Create Account" %>
+    </div>
+
+  <% end %>
+
+</div>

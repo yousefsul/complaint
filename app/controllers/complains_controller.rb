@@ -1,5 +1,7 @@
 class ComplainsController < ApplicationController
   before_action :set_complain, only: %i[ show edit update destroy ]
+  before_action :authorized
+
 
   # GET /complains or /complains.json
   def index

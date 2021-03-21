@@ -5,14 +5,17 @@ class SessionsController < ApplicationController
 search mongodb by email and password
 =end
   def create
-    @user = User.where(:email => params[:email])
-    if @user.present? && @user.authenticate(:password => params[:password])
-      session[:user_id] = @user.id
-      redirect_to complains_path
-    else
-      render :new
+    @user = User.find_by(email: params[:email])
+    respond_to do |format|
+      if @user&.authenticate(params[:password])
+        session[:user_id] = @user.id
+        format.html { redirect_to root_path, notice: 'Login Successfully' }
+        format.json { render json: @user, status: :ok }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        # format.json { render json: @user.errors.full_messages, status: :unprocessable_entity }
+      end
     end
-
   end
 
 =begin
@@ -21,6 +24,7 @@ and redirect to login page
 =end
   def destroy
     session.delete(:user_id)
-    redirect_to '/login', notice: 'Logged out!'
+    redirect_to login_path, notice: 'Logged out successfully'
+
   end
 end

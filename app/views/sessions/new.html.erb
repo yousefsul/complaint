@@ -1,20 +1,36 @@
-<html lang="en">
-<head>
-  <title>LoginPage</title>
-</head>
-
-
 <h1>Login</h1>
 
-<div class="login-form-container">
+<div class="loginContainer">
+  <%= form_with(:local => true, :url => login_path, html: { class: "loginForm" }) do |form| %>
 
-  <div class="login-form">
-    <%= form_for login_path, html: { class: "user-login-form" } do |f| %>
-      <%= f.email_field :email, placeholder: "Email" %><br>
-      <%= f.password_field :password, placeholder: "Password" %><br>
-      <%= submit_tag "Login" %>
-    <% end %>
-  </div>
+    <%#= render 'shared/error_messages' %>
+
+    <div class="field">
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= form.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <div class="flex-container">
+        <div class="flex-child">
+          <h4 style="color: white;">Don't have account</h4>
+        </div>
+        <div class="flex-child">
+          <h4>
+            <%= link_to 'Create One', register_path, style: "font-size: 14px;" %>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit "Login" %>
+    </div>
+
+  <% end %>
+
 </div>
-</html>
-
